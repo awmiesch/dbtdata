@@ -1,0 +1,80 @@
+data_file: fhlbof/allbond.dat
+header_row: 0
+skip_rows: 2
+columns:
+- name: CUSIP
+  range: [0, 20]
+  dtype: object
+- name: SERIES
+  range: [20, 35]
+  dtype: object
+- name: TRADED
+  range: [35, 52]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: ISSUED
+  range: [52, 69]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: MATURITY
+  range: [69, 86]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: TYPE
+  range: [86, 117]
+  dtype: object
+- name: FIRSTCPN
+  range: [117, 134]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: F
+  range: [134, 137]
+  dtype: object
+- name: PCR
+  range: [137, 144]
+  dtype: object
+- name: CCR
+  range: [144, 151]
+  dtype: object
+- name: R
+  range: [151, 154]
+  dtype: object
+- name: S
+  range: [154, 157]
+  dtype: object
+- name: CALL
+  range: [157, 164]
+  dtype: object
+- name: ORIGINAL
+  range: [164, 197]
+  dtype: float64
+- name: REOPENED
+  range: [197, 230]
+  dtype: float64
+- name: OUTSTANDING
+  range: [230, 263]
+  dtype: float64
+- name: PRICE
+  range: [263, 284]
+  dtype: float64
+- name: COUPON
+  range: [284, 305]
+  dtype: float64
+- name: MINDENOM
+  range: [305, 338]
+  dtype: float64
+- name: MULTIPLES
+  range: [338, 371]
+  dtype: float64
+- name: DAYCNT
+  range: [371, 391]
+  dtype: object
+- name: PAGENT
+  range: [391, 433]
+  dtype: object
+- name: V
+  range: [433, 436]
+  dtype: object
+- name: FORMULA
+  range: [436, 946]
+  dtype: float64

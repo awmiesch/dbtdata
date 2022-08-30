@@ -1,0 +1,7 @@
+"ID System: Nonaccrual 1-4 Family Residential"
+"","Title","Variable","Definition"
+"1.","Number of Institutions Reporting","instcnt","The number of institutions represented in that column of data.  This number is used primarily for peer group data. "
+"2.","Secured By 1-4 Family Residential Properties in Nonaccrual Status","nareres","Total loans secured by 1-4 family residential properties that are no longer accruing interest held in domestic offices of the institution."
+"3.","Nonaccrual Loans Secured  By 1-4 Family First Liens","NARERSFM","Closed-end loans secured by first liens on 1-4 family residential properties that are held in domestic office and are past due and no longer accruing interest."
+"4.","Nonaccrual Loans Secured  By 1-4 Family Junior Liens","NARERSF2","Closed-end loans secured by junior liens on 1-4 family residential properties that are held in domestic office and are past due and no longer accruing interest."
+"5.","Nonaccrual Home Equity Lines of Credit","nareloc","Total revolving, open-end loans secured by 1-4 family residential properties and extended under lines of credit which are no longer accruing interest held in domestic offices of the institution."

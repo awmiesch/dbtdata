@@ -1,0 +1,10 @@
+data_file: fhlbof/alldlr.dat
+header_row: 0
+skip_rows: 2
+columns:
+- name: CUSIP
+  range: [0, 20]
+  dtype: object
+- name: DEALER
+  range: [20, 61]
+  dtype: object

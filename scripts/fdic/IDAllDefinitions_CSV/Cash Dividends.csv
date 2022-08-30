@@ -1,0 +1,6 @@
+"ID System: Cash Dividends"
+"","Title","Variable","Definition"
+"1.","Number of Institutions Reporting","instcnt","The number of institutions represented in that column of data.  This number is used primarily for peer group data. "
+"2.","Cash Dividends","eqcdiv","Cash dividends paid on common and preferred stock."
+"3.","Cash Dividends Declared on Preferred Stock","eqcdivp","Cash dividends declared on preferred stock during the calendar year-to-date.  Prior to 2001, institutions with total assets of  less than $100 million file these data only on the December Call Report.  "
+"4.","Cash Dividends Declared on Common Stock","eqcdivc","Cash dividends declared on common stock during the calendar year-to-date.  Prior to 2001, institutions with total assets of less than $100 million file these data only on the December Call Report."

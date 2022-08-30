@@ -1,0 +1,34 @@
+data_file: fhlbof/allcall.dat
+header_row: 0
+skip_rows: 2
+columns:
+- name: CUSIP
+  range: [0, 20]
+  dtype: object
+- name: CALLTYPE
+  range: [20, 41]
+  dtype: object
+- name: STARTDT
+  range: [41, 58]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: ENDDT
+  range: [58, 75]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: NEXTCALL
+  range: [75, 92]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: DATE
+  range: [92, 101]
+  dtype: object
+- name: F
+  range: [101, 104]
+  dtype: object
+- name: SIMPNDX
+  range: [104, 112]
+  dtype: object
+- name: FORMULA
+  range: [112, 623]
+  dtype: object
