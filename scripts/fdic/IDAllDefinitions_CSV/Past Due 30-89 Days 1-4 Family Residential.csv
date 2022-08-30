@@ -1,7 +1,0 @@
-"ID System: Past Due 30-89 Days 1-4 Family Residential"
-"","Title","Variable","Definition"
-"1.","Number of Institutions Reporting","instcnt","The number of institutions represented in that column of data.  This number is used primarily for peer group data. "
-"2.","Secured By 1-4 Family Residential Properties, Past Due 30  -  89 Days","p3reres","Total loans secured by 1-4 family residential properties past due 30 through 89 days and still accruing interest which are held in domestic offices of the institution."
-"3.","Past Due 30-89 Days Secured  By 1-4 Family First Liens","P3RERSFM","Closed-end loans secured by first liens on 1-4 family residential properties that are held in domestic office and are 30-89 days past due and still accruing interest."
-"4.","Past Due 30-89 Days Secured  By 1-4 Family Junior Liens","P3RERSF2","Closed-end loans secured by junior liens on 1-4 family residential properties that are held in domestic office and are 30-89 days past due and still accruing interest."
-"5.","Home Equity Lines of Credit, Past Due 30 - 89 Days","p3reloc","Total revolving, open-end loans secured by 1-4 family residential properties and extended under lines of credit past due 30 through 89 days and still accruing interest which are held in domestic offices of the institution."

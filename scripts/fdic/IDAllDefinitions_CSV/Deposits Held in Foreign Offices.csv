@@ -1,8 +1,0 @@
-"ID System: Deposits Held in Foreign Offices"
-"","Title","Variable","Definition"
-"1.","Deposits Held in Foreign Offices","depfor"," The sum of all foreign office deposits, including demand deposits, money market deposits, other savings deposits and time deposits. This item is not available for TFR Reporters.TFR reports ended December 2011."
-"2.","Deposits:Individuals, Partnerships and Corporations ","depipccf","Total transaction and nontransaction accounts of Individuals, partnerships and corporations (including all certified and official checks) held in foreign offices.  This item is not available for TFR Reporters. TFR Reports ended in December 2011. Beginning in March 2017 only reported by banks with Assets of $10 billion or more."
-"3.","Deposits:Commercial Banks and Other Depository Institutions in U.S.","depusbkf","Deposits of U.S. banks (including IBFs and foreign branches of U.S. banks) and other depository institutions in the U.S that are held in foreign offices."
-"4.","Deposits:Banks in Foreign Countries","depfbkf","Deposits of foreign banks (including U.S. branches and agencies of foreign banks) held in foreign offices."
-"5.","Deposits:Foreign Governments and Official Institutions","depfgovf","Deposits of foreign governments and official institutions (including foreign central banks) held in foreign offices."
-"6.","Deposits:U.S Government, States, and Political Subdivisions","depusmf","Deposits of U.S. government, states and political subdivisions in the U.S. that are held in foreign offices."

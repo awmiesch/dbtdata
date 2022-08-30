@@ -1,5 +1,0 @@
-"ID System: Interest income and expense in foreign offices	"
-"","Title","Variable","Definition"
-"1.","Number of Institutions Reporting","INSTCNT","The number of institutions represented in that column of data.  This number is used primarily for peer group data. "
-"2.","Interest Income: Foreign Office Loans","ILNFOR","Total interest and fee income on loans held in foreign offices, edge and agreement subsidiaries and IBF's.    "
-"3.","Interest Expense: Foreign Office Deposits","EDEPFOR","Total interest expense on deposits held in foreign offices, Edge and agreement subsidiaries and IBFs."
