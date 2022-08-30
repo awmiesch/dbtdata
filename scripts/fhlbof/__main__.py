@@ -134,10 +134,9 @@ if __name__ == "__main__":
         help="Path to data file directory.",
     )
     argparser.add_argument(
-        "--outputdir",
+        "outputdir",
         type=Path,
         help="Path to output file directory. Defaults to user home directory.",
-        default=Path.home(),
     )
     argparser.add_argument(
         "--sourcedir",
