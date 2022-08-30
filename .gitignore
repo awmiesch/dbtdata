@@ -7,3 +7,5 @@ logs/
 **/.pytest_cache
 **/*.log
 **/.DS_*
+**/__pycache__
+
