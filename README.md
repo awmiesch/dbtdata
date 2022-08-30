@@ -9,9 +9,11 @@ The staging schema is populated from the data sources described below.
 To generate the data files:
 
 - Go to https://www.fhlb-of.com/ofweb_userWeb/pageBuilder/bond-data-files-74
-- Download files using the links under the "Full File (Weekly)" section.
-- Save the files to the fhlbof subdirectory
-- Run the fhlbof package, eg: python -m fhlbof
+- Download files using the links under the "Full File (Weekly)" section
+- Save each file to a local directory
+- Run the fhlbof package
+    - Provide the data file directory as the first argument
+    - Provide the desired output directory as the second argument
 
 
 
