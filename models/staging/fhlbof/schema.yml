@@ -6,7 +6,63 @@ sources:
   schema: fhlbof
   tables:
   - name: allbond
+    columns:
+    - name: CUSIP
+    - name: SERIES
+    - name: TRADED
+    - name: ISSUED
+    - name: MATURITY
+    - name: TYPE
+    - name: FIRSTCPN
+    - name: F
+    - name: PCR
+    - name: CCR
+    - name: R
+    - name: S
+    - name: CALL
+    - name: ORIGINAL
+    - name: REOPENED
+    - name: OUTSTANDING
+    - name: PRICE
+    - name: COUPON
+    - name: MINDENOM
+    - name: MULTIPLES
+    - name: DAYCNT
+    - name: PAGENT
+    - name: V
+    - name: FORMULA
   - name: allcall
+    columns:
+    - name: CUSIP
+    - name: CALLTYPE
+    - name: STARTDT
+    - name: ENDDT
+    - name: NEXTCALL
+    - name: DATE
+    - name: F
+    - name: SIMPNDX
+    - name: FORMULA
   - name: allcpn
+    columns:
+    - name: CUSIP
+    - name: SEQ
+    - name: START
+    - name: COUPON
+    - name: MARGIN
+    - name: SIMPNDX
+    - name: FIRSTRST
+    - name: CPNFRQ
+    - name: FORMULA
   - name: alldlr
+    columns:
+    - name: CUSIP
+    - name: DEALER
   - name: allndx
+    columns:
+    - name: CUSIP
+    - name: SEQ
+    - name: DESCRIP
+    - name: COUPON
+    - name: F
+    - name: FIRSTRST
+    - name: USAGE
