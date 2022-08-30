@@ -83,48 +83,6 @@ def main(datadir: Path, outputdir: Path, sourcedir: Path):
         print(output_file)
 
 
-def main1(properties_file):
-    with open(properties_file, 'r') as stream:
-        properties = yaml.load(stream, Loader=yaml.SafeLoader)
-
-    with open(properties['data_file'], 'r') as stream:
-        rows = stream.readlines()
-
-    field_ranges = [x['range'] for x in properties['columns']]
-    
-    colnames = split_row(rows[properties['header_row']], field_ranges)
-
-    records = []
-    for row in rows[properties['skip_rows']:]:
-        values = split_row(row, field_ranges)
-        record = dict(zip(colnames, values))
-        records.append(record)
-    
-    table = pandas.DataFrame(
-        columns=colnames,
-        data=records,
-    )
-
-    column_metadata = {x['name']: x for x in properties['columns']}
-
-    transformed_columns = {}
-    for colname, column in table.iteritems():
-        metadata = column_metadata[colname]
-        transformed_columns[colname] = transform(column, metadata)
-    
-    table = pandas.DataFrame(transformed_columns)
-
-    output_file = properties_file.parent.joinpath(f"{properties_file.stem}.csv")
-
-    table.to_csv(
-        output_file,
-        index=False,
-        na_rep='',
-    )
-
-    print(output_file)
-
-
 if __name__ == "__main__":
     
     argparser = argparse.ArgumentParser(description="Convert OF DAT files to CSV files.")
