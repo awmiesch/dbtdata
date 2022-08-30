@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+- name: fhlbof
+  database: dbtdata
+  schema: fhlbof
+  tables:
+  - name: allbond
+  - name: allcall
+  - name: allcpn
+  - name: alldlr
+  - name: allndx
