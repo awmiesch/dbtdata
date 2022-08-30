@@ -3,12 +3,20 @@ version: 2
 models:
 - name: stg_debt_securities
   description: debt_securities staging table
+  config:
+    materialized: table
 - name: stg_deposits
   description: deposits staging table
+  config:
+    materialized: table
 - name: stg_derivatives
   description: derivatives staging table
+  config:
+    materialized: table
 - name: stg_securities
   description: securities staging table
+  config:
+    materialized: table
 
 sources:
 - name: fdic
