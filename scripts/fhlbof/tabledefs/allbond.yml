@@ -1,4 +1,3 @@
-data_file: fhlbof/allbond.dat
 header_row: 0
 skip_rows: 2
 columns:

@@ -4,16 +4,16 @@
 
 The staging schema is populated from the data sources described below.
 
-### FDIC Data
-
-https://www7.fdic.gov/sdi/download_large_list_outside.asp
-
-
 ### FHLB Office of Finance Data
 
-Files are downloaded from the "Full File (Weekly)" section.
+To generate the data files:
 
-https://www.fhlb-of.com/ofweb_userWeb/pageBuilder/bond-data-files-74
+- Go to https://www.fhlb-of.com/ofweb_userWeb/pageBuilder/bond-data-files-74
+- Download files using the links under the "Full File (Weekly)" section.
+- Save the files to the fhlbof subdirectory
+- Run the fhlbof package, eg: python -m fhlbof
+
+
 
 
 
