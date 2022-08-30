@@ -1,11 +1,76 @@
 version: 2
 
+models:
+- name: STG_BOND
+  columns:
+  - name: CUSIP
+  - name: SERIES
+  - name: TRADED
+  - name: ISSUED
+  - name: MATURITY
+  - name: TYPE
+  - name: FIRST_CPN
+  - name: CPN_FRQ
+  - name: PRIN_CURRENCY
+  - name: CPN_CURRENCY
+  - name: RATE_TYPE
+  - name: RATE_SUB_TYPE
+  - name: CALL_TYPE
+  - name: INITIAL_PAR
+  - name: REOPENED
+  - name: OUTSTANDING
+  - name: ISSUE_PRICE
+  - name: INITIAL_COUPON
+  - name: MINDENOM
+  - name: MULTIPLES
+  - name: DAY_COUNT
+  - name: PAY_AGENT
+  - name: VAR_PRIN_IND
+  - name: COUPON_FORMULA
+- name: STG_CALL
+  columns:
+  - name: CUSIP
+  - name: CALL_TYPE
+  - name: START_DATE
+  - name: END_DATE
+  - name: NEXT_CALL
+  - name: DATE
+  - name: FREQ
+  - name: SIMP_NDX
+  - name: FORMULA
+- name: STG_CPN
+  columns:
+  - name: CUSIP
+  - name: SEQ
+  - name: START_DATE
+  - name: COUPON
+  - name: MARGIN
+  - name: SIMP_NDX
+  - name: FIRST_RST
+  - name: CPN_FRQ
+  - name: FORMULA
+- name: STG_DLR
+  columns:
+  - name: CUSIP
+  - name: DEALER
+- name: STG_NDX
+  columns:
+  - name: CUSIP
+  - name: SEQ
+  - name: DESCRIP
+  - name: RESET_FRQ
+  - name: FIRST_RST
+  - name: CPN_FRQ
+  - name: FIRST_RST
+  - name: USAGE
+
 sources:
 - name: fhlbof
   database: dbtdata
   schema: fhlbof
   tables:
   - name: allbond
+    description: Descriptive information about FHLB Domestic Bond, MTN and Global Issues
     columns:
     - name: CUSIP
     - name: SERIES
@@ -32,6 +97,7 @@ sources:
     - name: V
     - name: FORMULA
   - name: allcall
+    description: Call structure information about FHLB Domestic Bond, MTN and Global Issues
     columns:
     - name: CUSIP
     - name: CALLTYPE
@@ -43,6 +109,7 @@ sources:
     - name: SIMPNDX
     - name: FORMULA
   - name: allcpn
+    description: Coupon information for bond, MTNs and Global Issues
     columns:
     - name: CUSIP
     - name: SEQ
@@ -54,10 +121,12 @@ sources:
     - name: CPNFRQ
     - name: FORMULA
   - name: alldlr
+    description: Dealer information for bonds, MTNs and Global Issues
     columns:
     - name: CUSIP
     - name: DEALER
   - name: allndx
+    description: Market index information for bond, MTNs and Global Issues
     columns:
     - name: CUSIP
     - name: SEQ
