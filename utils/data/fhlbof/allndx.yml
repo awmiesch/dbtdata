@@ -1,0 +1,23 @@
+data_file: fhlbof/allndx.dat
+header_row: 0
+skip_rows: 2
+columns:
+- name: CUSIP
+  range: [0, 20]
+  dtype: object
+- name: SEQ
+  range: [20, 24]
+  dtype: object
+- name: DESCRIP
+  range: [24, 85]
+  dtype: object
+- name: F
+  range: [85, 88]
+  dtype: object
+- name: FIRSTRST
+  range: [88, 105]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: USAGE
+  range: [105, 136]
+  dtype: object

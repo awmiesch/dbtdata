@@ -1,0 +1,32 @@
+data_file: fhlbof/allcpn.dat
+header_row: 0
+skip_rows: 2
+columns:
+- name: CUSIP
+  range: [0, 20]
+  dtype: object
+- name: SEQ
+  range: [20, 24]
+  dtype: object
+- name: START
+  range: [24, 41]
+  dtype: datetime64
+  datefmt: "%Y%m%d"
+- name: COUPON
+  range: [41, 60]
+  dtype: float64
+- name: MARGIN
+  range: [60, 81]
+  dtype: float64
+- name: SIMPNDX
+  range: [81, 89]
+  dtype: object
+- name: FIRSTRST
+  range: [89, 106]
+  dtype: object
+- name: CPNFRQ
+  range: [106, 113]
+  dtype: object
+- name: FORMULA
+  range: [113, 624]
+  dtype: float64
