@@ -1,5 +1,7 @@
 # dbtdata
 
+A demo of dbt on BigQuery.
+
 ## Data Sources
 
 The staging schema is populated from the data sources described below.
