@@ -1,3 +1,7 @@
+"""
+Convert each .dat file into a .csv file.
+"""
+
 import pathlib, re, pandas, yaml
 
 

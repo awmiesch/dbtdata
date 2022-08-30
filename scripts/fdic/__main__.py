@@ -82,7 +82,7 @@ if __name__ == "__main__":
         ]
     }
 
-    output_file = pathlib.Path('schema.yml')
+    output_file = pathlib.Path('fdic/schema.yml')
     with open(output_file, 'w') as stream:
         yaml.dump(
             sources,
