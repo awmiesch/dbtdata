@@ -2,4 +2,7 @@
 target/
 dbt_packages/
 logs/
-/*.pyc
+**/*.pyc
+**/.egg-info
+**/.pytest_cache
+**/*.log
