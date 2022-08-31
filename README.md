@@ -1,32 +1,32 @@
 # dbtdata
 
-A demo of dbt on BigQuery.
+A demo of a dbt project that uses BigQuery as the backend.
 
-## Data Sources
+## Source Data
 
-The staging schema is populated from the data sources described below.
+Follow the steps below to create the BigQuery source datasets. Source datasets represent tables from on-prem databases that have been uploaded to BigQuery via CSV files.
 
-### FHLB Office of Finance Data
+### FHLB Office of Finance (fhlbof)
 
-1. Generate the data files:
+1. Create a new dataset called *fhlbof*
+2. Change the *database* entry of *models/staging/fhlbof/schema.yml* to the project name where the dataset was created
+3. Create a new table for each CSV file in the *sourcedata/fhlbof* subdirectory
+    - Select *Create table* from the *fhlbof* dataset
+        - Select *Upload* under *Create table from*
+        - Select *CSV* under *File format*
+        - Use the file name without the extension as the table name (eg. bond)
+        - Enable the *Auto detect* option
+        - Click *Create Table*
 
-    - Go to https://www.fhlb-of.com/ofweb_userWeb/pageBuilder/bond-data-files-74
-    - Download files using the links under the "Full File (Weekly)" section
-    - Save each file to a local directory
-    - Navigate to the scripts directory and run the fhlbof package
-        - Provide the data file directory as the first argument
-        - Provide the desired output directory as the second argument
+#### To generate the data files (optional):
 
-2. Create the fhlbof dataset on BigQuery:
-
-    - Create a new project called 'dbtdata'
-    - Create a new dataset called 'fhlbof'
-    - Create a table for each file
-        - Select 'Upload' under 'Create table from'
-        - Select 'CSV' under 'File format'
-        - Use the file name without the extension as the table name (eg. allbond)
-        - Activate the 'Auto detect' checkbox under 'Schema'
-        - Click 'Create Table' button
+- Go to https://www.fhlb-of.com/ofweb_userWeb/pageBuilder/bond-data-files-74
+- Download files using the links under the *Daily Issuance Files* section
+- Select a day and save each file to a local directory
+- Navigate to the scripts directory and run the fhlbof package
+    - Provide the local data file directory as the first argument
+    - Provide the desired local output directory as the second argument
+    - Provide the effective date of the data files as the third argument (using YYYY-MM-DD format)
 
 
 
