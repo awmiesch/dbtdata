@@ -1,0 +1,75 @@
+version: 2
+
+seeds:
+- name: ref_call_type
+  description: Call type reference table
+  config:
+    column_types:
+      call_type_code: string
+      call_type_desc: string
+  columns:
+    - name: call_type_code
+      tests:
+      - not_null
+      - unique
+    - name: call_type_desc
+- name: ref_rate_type
+  description: Rate type reference table
+  config:
+    column_types:
+      rate_type_code: string
+      rate_type_desc: string
+  columns:
+    - name: rate_type_code
+      tests:
+      - not_null
+      - unique
+    - name: rate_type_desc
+- name: ref_rate_sub_type
+  description: Rate sub-type reference table
+  config:
+    column_types:
+      rate_sub_type_code: string
+      rate_sub_type_desc: string
+  columns:
+    - name: rate_sub_type_code
+      tests:
+      - not_null
+      - unique
+    - name: rate_sub_type_desc
+- name: ref_coupon_freq
+  description: Coupon frequency reference table
+  config:
+    column_types:
+      coupon_freq_code: string
+      coupon_freq_desc: string
+  columns:
+    - name: coupon_freq_code
+      tests:
+      - not_null
+      - unique
+    - name: coupon_freq_desc
+- name: ref_call_freq
+  description: Call frequency reference table
+  config:
+    column_types:
+      call_freq_code: string
+      call_freq_desc: string
+  columns:
+    - name: call_freq_code
+      tests:
+      - not_null
+      - unique
+    - name: call_freq_desc
+- name: ref_reset_freq
+  description: Reset frequency reference table
+  config:
+    column_types:
+      reset_freq_code: string
+      reset_freq_desc: string
+  columns:
+    - name: reset_freq_code
+      tests:
+      - not_null
+      - unique
+    - name: reset_freq_desc
