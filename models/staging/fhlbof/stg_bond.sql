@@ -1,2 +1,2 @@
 select *
-from {{ source('fhlbof', 'allbond') }}
+from {{ source('fhlbof', 'bond') }}
