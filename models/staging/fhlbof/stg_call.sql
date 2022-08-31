@@ -1,2 +1,2 @@
 select *
-from {{ source('fhlbof', 'allcall') }}
+from {{ source('fhlbof', 'call') }}

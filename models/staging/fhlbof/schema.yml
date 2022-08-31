@@ -69,7 +69,7 @@ sources:
   database: dbtdata
   schema: fhlbof
   tables:
-  - name: allbond
+  - name: bond
     description: Descriptive information about FHLB Domestic Bond, MTN and Global Issues
     columns:
     - name: CUSIP
@@ -96,7 +96,7 @@ sources:
     - name: PAGENT
     - name: V
     - name: FORMULA
-  - name: allcall
+  - name: call
     description: Call structure information about FHLB Domestic Bond, MTN and Global Issues
     columns:
     - name: CUSIP
@@ -108,7 +108,7 @@ sources:
     - name: F
     - name: SIMPNDX
     - name: FORMULA
-  - name: allcpn
+  - name: cpn
     description: Coupon information for bond, MTNs and Global Issues
     columns:
     - name: CUSIP
@@ -120,12 +120,12 @@ sources:
     - name: FIRSTRST
     - name: CPNFRQ
     - name: FORMULA
-  - name: alldlr
+  - name: dlr
     description: Dealer information for bonds, MTNs and Global Issues
     columns:
     - name: CUSIP
     - name: DEALER
-  - name: allndx
+  - name: ndx
     description: Market index information for bond, MTNs and Global Issues
     columns:
     - name: CUSIP
