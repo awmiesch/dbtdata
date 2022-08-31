@@ -61,3 +61,15 @@ seeds:
       - not_null
       - unique
     - name: call_freq_desc
+- name: ref_reset_freq
+  description: Reset frequency reference table
+  config:
+    column_types:
+      reset_freq_code: string
+      reset_freq_desc: string
+  columns:
+    - name: reset_freq_code
+      tests:
+      - not_null
+      - unique
+    - name: reset_freq_desc
