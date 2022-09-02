@@ -1,7 +1,7 @@
 version: 2
 
 models:
-- name: int_bonds_ext
+- name: bonds
   columns:
   - name: effective_date
   - name: cusip
