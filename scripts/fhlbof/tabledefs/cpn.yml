@@ -6,10 +6,10 @@ columns:
   dtype: object
 - name: SEQ
   range: [20, 24]
-  dtype: object
+  dtype: int64
 - name: START
   range: [24, 41]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: COUPON
   range: [41, 60]
@@ -19,7 +19,7 @@ columns:
   dtype: float64
 - name: SIMPNDX
   range: [81, 89]
-  dtype: object
+  dtype: int64
 - name: FIRSTRST
   range: [89, 106]
   dtype: object

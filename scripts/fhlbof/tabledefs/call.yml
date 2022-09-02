@@ -9,15 +9,15 @@ columns:
   dtype: object
 - name: STARTDT
   range: [41, 58]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: ENDDT
   range: [58, 75]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: NEXTCALL
   range: [75, 92]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: DATE
   range: [92, 101]
