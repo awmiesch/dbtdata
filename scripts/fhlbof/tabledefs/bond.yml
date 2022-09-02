@@ -9,22 +9,22 @@ columns:
   dtype: object
 - name: TRADED
   range: [35, 52]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: ISSUED
   range: [52, 69]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: MATURITY
   range: [69, 86]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: TYPE
   range: [86, 117]
   dtype: object
 - name: FIRSTCPN
   range: [117, 134]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: F
   range: [134, 137]

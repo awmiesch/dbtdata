@@ -6,7 +6,7 @@ columns:
   dtype: object
 - name: SEQ
   range: [20, 24]
-  dtype: object
+  dtype: int64
 - name: DESCRIP
   range: [24, 85]
   dtype: object
@@ -15,7 +15,7 @@ columns:
   dtype: object
 - name: FIRSTRST
   range: [88, 105]
-  dtype: datetime64
+  dtype: datetime64[ns]
   datefmt: "%Y%m%d"
 - name: USAGE
   range: [105, 136]
