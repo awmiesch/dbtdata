@@ -9,14 +9,24 @@ models:
     - not_null
   - name: series
   - name: trade_date
+    tests:
+    - not_null
   - name: issue_date
+    tests:
+    - not_null
   - name: maturity_date
+    tests:
+    - not_null
   - name: type
+    tests:
+    - not_null
   - name: first_coupon_date
   - name: coupon_freq
   - name: principal_currency
   - name: coupon_currency
   - name: rate_type
+    tests:
+    - not_null
   - name: rate_sub_type
   - name: call_type
   - name: original_par_value
@@ -37,11 +47,17 @@ models:
     - unique
     - not_null
   - name: call_type
+    tests:
+    - not_null
   - name: start_date
   - name: end_date
   - name: next_call_date
+    tests:
+    - not_null
   - name: date
   - name: call_freq
+    tests:
+    - not_null
   - name: simp_index
   - name: formula
 - name: stg_cpn

@@ -73,3 +73,15 @@ seeds:
       - not_null
       - unique
     - name: reset_freq_desc
+- name: ref_maturity_categories
+  description: Maturity category reference table
+  config:
+    column_types:
+      maturity_category_code: integer
+      maturity_category_desc: string
+  columns:
+    - name: maturity_category_code
+      tests:
+      - not_null
+      - unique
+    - name: maturity_category_desc

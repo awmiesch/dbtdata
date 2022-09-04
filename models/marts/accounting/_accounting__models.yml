@@ -1,0 +1,11 @@
+version: 2
+
+models:
+- name: bonds_by_maturity
+  columns:
+  - name: maturity_category_desc
+  - name: outstanding_par_value
+- name: bonds_by_maturity_or_next_call
+  columns:
+  - name: maturity_category_desc
+  - name: outstanding_par_value
