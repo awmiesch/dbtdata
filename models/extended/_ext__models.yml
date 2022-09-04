@@ -1,7 +1,7 @@
 version: 2
 
 models:
-- name: int_bonds
+- name: ext_bonds
   columns:
   - name: cusip
   - name: series
@@ -11,17 +11,24 @@ models:
   - name: trade_date
   - name: issue_date
   - name: maturity_date
-  - name: next_call_date
-  - name: call_type_desc
-  - name: call_freq_desc
   - name: first_coupon_date
-  - name: coupon_freq_desc
   - name: rate_type_desc
   - name: rate_sub_type_desc
-  - name: day_count
   - name: issue_price
   - name: coupon
+  - name: day_count
   - name: margin
   - name: original_par_value
   - name: reopened_par_value
   - name: outstanding_par_value
+- name: ext_call
+  columns:
+  - name: cusip
+  - name: next_call_date
+  - name: call_type_desc
+  - name: call_freq_desc
+- name: ext_cpn
+  columns: 
+  - name: cusip
+  - name: coupon_freq_desc
+  - name: margin

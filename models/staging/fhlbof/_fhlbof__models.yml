@@ -3,8 +3,10 @@ version: 2
 models:
 - name: stg_bond
   columns:
-  - name: effective_date
   - name: cusip
+    tests:
+    - unique
+    - not_null
   - name: series
   - name: trade_date
   - name: issue_date
@@ -30,8 +32,10 @@ models:
   - name: formula
 - name: stg_call
   columns:
-  - name: effective_date
   - name: cusip
+    tests:
+    - unique
+    - not_null
   - name: call_type
   - name: start_date
   - name: end_date
@@ -42,8 +46,10 @@ models:
   - name: formula
 - name: stg_cpn
   columns:
-  - name: effective_date
   - name: cusip
+    tests:
+    - unique
+    - not_null
   - name: sequence
   - name: start_date
   - name: coupon
@@ -54,13 +60,17 @@ models:
   - name: formula
 - name: stg_dealer
   columns:
-  - name: effective_date
   - name: cusip
+    tests:
+    - unique
+    - not_null
   - name: dealer
 - name: stg_ndx
   columns:
-  - name: effective_date
   - name: cusip
+    tests:
+    - unique
+    - not_null
   - name: sequence
   - name: description
   - name: reset_freq
