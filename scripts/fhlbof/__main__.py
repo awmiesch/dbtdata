@@ -3,11 +3,11 @@ Convert each .dat file into a .csv file.
 https://googleapis.dev/python/bigquery/latest/generated/google.cloud.bigquery.client.Client.html#google.cloud.bigquery.client.Client.load_table_from_file
 """
 
-import argparse, re, datetime, yaml
+import argparse, re, yaml, datetime
 from os import getenv
 from pathlib import Path
 from pandas import DataFrame, Series, to_datetime, to_numeric
-from google.cloud import bigquery
+from google.cloud import bigquery as bq
 
 
 def clean(value: str) -> str:
@@ -43,9 +43,9 @@ def get_colnames(rows: list, properties: dict) -> list:
     return split_row(rows[header_row], field_ranges)
 
 
-def read_file(datafile: Path, properties: dict, effective_date: str) -> DataFrame:
+def read_data_file(path: Path, properties: dict) -> DataFrame:
     
-    with open(datafile, 'r') as stream:
+    with open(path, 'r') as stream:
         rows = stream.readlines()   
 
     field_ranges = [x['range'] for x in properties['columns']]
@@ -71,7 +71,6 @@ def read_file(datafile: Path, properties: dict, effective_date: str) -> DataFram
         transformed_columns[colname] = transform(column, metadata)
     
     table = DataFrame(transformed_columns)
-    table['EFFECTIVE_DATE'] = datetime.date.fromisoformat(effective_date)
 
     return table
 
@@ -85,34 +84,37 @@ def create_schema(table: DataFrame) -> list:
     }
     schema = []
     for name, dtype in zip(table.columns, table.dtypes):
-        field = bigquery.SchemaField(name, dtmap.get(dtype.name, "STRING"))
+        field = bq.SchemaField(name, dtmap.get(dtype.name, "STRING"))
         schema.append(field)   
     return schema
 
 
-def main(datadir: Path, effective_date: str, sourcedir: Path):
+def read_properties_file(path: Path) -> dict:
+    with open(path, 'r') as stream:
+        properties = yaml.load(stream, Loader=yaml.SafeLoader)
+
+    return properties
+
+
+def load_tables(client: bq.Client, datadir: Path, dataset: str):
+
+    sourcedir = Path(__file__).parent.joinpath('tabledefs')
 
     for properties_file in sourcedir.glob("*.yml"):     
 
         table_name = properties_file.stem   
+        table_id = f"{getenv('GCP_PROJECT')}.{dataset}.{table_name}"
+        table_ref = bq.table.TableReference.from_string(table_id)
         print(table_name)
 
-        with open(properties_file, 'r') as stream:
-            properties = yaml.load(stream, Loader=yaml.SafeLoader)
+        properties = read_properties_file(properties_file)
         
         # Ignore the first 3 characters of the filename.
-        datafile = [x for x in datadir.glob(f"*{table_name}.dat")][0]
-        
-        df = read_file(datafile, properties, effective_date)
+        data_file = [x for x in datadir.glob(f"*{table_name}.dat")][0]
 
+        df = read_data_file(data_file, properties)
+        df['load_timestamp'] = datetime.datetime.now()
         print(df.head())
-
-        #schema = create_schema(df)
-
-        table_id = f"{getenv('GCP_PROJECT')}.fhlbof.{table_name}"
-        table_ref = bigquery.table.TableReference.from_string(table_id)
-        
-        client = bigquery.Client()
 
         job = client.load_table_from_dataframe(
             df,
@@ -120,13 +122,30 @@ def main(datadir: Path, effective_date: str, sourcedir: Path):
             project=getenv('GCP_PROJECT'),
         )
 
-        r = job.result()
+        jobrun = job.result()
 
-        print(type(r))
+        print(f"job_id: {jobrun.job_id}")
+        print(f"job_status: {jobrun.state}")
 
         table = client.get_table(table_id)
 
-        print(f"table: {table.full_table_id}\nrow_count:{table.num_rows}")
+        print(f"table: {table.full_table_id}")
+        print(f"row_count: {table.num_rows}")
+
+
+def drop_tables(client: bq.Client, dataset: str):
+    for table in client.list_tables(dataset):
+        client.delete_table(table)
+        print(f"Dropped table {table.full_table_id}")
+
+
+def main(datadir: Path, dataset: str):
+
+    client = bq.Client()
+
+    drop_tables(client, dataset)
+
+    load_tables(client, datadir, dataset)
 
 
 if __name__ == "__main__":
@@ -138,18 +157,12 @@ if __name__ == "__main__":
         help="Path to data file directory.",
     )
     argparser.add_argument(
-        "effective_date",
+        "dataset",
         type=str,
-        help="Effective date in YYYY-MM-DD format",
-    )
-    argparser.add_argument(
-        "--sourcedir",
-        type=Path,
-        help="Path to directory containing yaml properties file for each table. Defaults to fhlbof/tabledefs.",
-        default=Path(__file__).parent.joinpath('tabledefs'),
+        help="Dataset name.",
     )
 
     args = argparser.parse_args()
     
-    main(args.datadir, args.effective_date, args.sourcedir)
+    main(args.datadir, args.dataset)
 
