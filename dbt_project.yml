@@ -31,6 +31,8 @@ models:
   dbtdata:
     staging:
       +materialized: view
+    extended:
+      +materialized: view
     intermediate:
       +materialized: view
     marts:

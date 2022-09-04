@@ -1,28 +1,12 @@
 version: 2
 
 models:
-- name: bonds
+- name: bonds_by_rate_type
   columns:
-  - name: effective_date
-  - name: cusip
-  - name: series
-  - name: type
-  - name: pay_agent
-  - name: dealer
-  - name: trade_date
-  - name: issue_date
-  - name: maturity_date
-  - name: next_call_date
-  - name: first_coupon_date
-  - name: coupon_freq_desc
   - name: rate_type_desc
   - name: rate_sub_type_desc
-  - name: call_type_desc
-  - name: call_freq_desc
-  - name: issue_price
-  - name: coupon
-  - name: day_count
-  - name: margin
-  - name: original_par_value
-  - name: reopened_par_value
+  - name: outstanding_par_value
+- name: bonds_by_dealer
+  columns:
+  - name: dealer
   - name: outstanding_par_value
