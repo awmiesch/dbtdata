@@ -12,7 +12,7 @@ ref_coupon_freq as (
 
 ),
 
-ext_cpn as (
+base_cpn as (
 
     select
         stg_cpn.cusip,
@@ -24,5 +24,5 @@ ext_cpn as (
 
 )
 
-select * from ext_cpn
+select * from base_cpn
 

@@ -30,7 +30,7 @@ ref_rate_sub_type as (
 
 ),
 
-ext_bonds as (
+base_bonds as (
 
     select
         stg_bond.cusip,
@@ -60,5 +60,5 @@ ext_bonds as (
 
 )
 
-select * from ext_bonds
+select * from base_bonds
 

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-- name: ext_bonds
+- name: base_bonds
   columns:
   - name: cusip
   - name: series
@@ -21,13 +21,13 @@ models:
   - name: original_par_value
   - name: reopened_par_value
   - name: outstanding_par_value
-- name: ext_call
+- name: base_call
   columns:
   - name: cusip
   - name: next_call_date
   - name: call_type_desc
   - name: call_freq_desc
-- name: ext_cpn
+- name: base_cpn
   columns: 
   - name: cusip
   - name: coupon_freq_desc

@@ -31,11 +31,19 @@ models:
   dbtdata:
     staging:
       +materialized: view
-    extended:
+      +schema: staging
+    base:
       +materialized: view
+      +schema: base
     intermediate:
       +materialized: view
+      +schema: intermediate
     marts:
-      +materialized: table
+      accounting:
+        +materialized: table
+        +schema: accounting
+      treasury:
+        +materialized: table
+        +schema: treasury
 
 

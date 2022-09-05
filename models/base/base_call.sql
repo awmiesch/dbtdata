@@ -18,7 +18,7 @@ ref_call_freq as (
 
 ),
 
-ext_call as (
+base_call as (
 
     select
         stg_call.cusip,
@@ -33,5 +33,5 @@ ext_call as (
 
 )
 
-select * from ext_call
+select * from base_call
 
